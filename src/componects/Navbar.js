@@ -39,8 +39,8 @@ Navbar.propTypes = {
 }
 
 Navbar.defaultProps = {
-    title: 'Utils',
-    aboutText: 'About'
+    title: 'Set title',
+    aboutText: 'Set About-text'
 }
 
 export default Navbar
