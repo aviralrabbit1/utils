@@ -5,8 +5,8 @@ import Navbar from './componects/Navbar';
 function App() {
   return (
     <>
+    <Navbar title="TextUtility" aboutText="About me" />
     <Navbar/>
-
     </>
   );
 }
