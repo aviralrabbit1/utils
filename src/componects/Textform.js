@@ -11,34 +11,38 @@ function Textform(props) {
   const upperClick = () => {
     setText(text.toUpperCase());
     console.log("upperClick")
+  }  
+  
+  const lowerClick = () => {
+    setText(text.toLowerCase());
+    console.log("upperClick")
   }
-  const[text, setText] = useState('Enter your text here');
+  const[text, setText] = useState('');
   // setText("New text"); //correct way to change the default set state
 
   return (
     <>
-      <div className="container">
-          <h1>Text utilities</h1>
-          {/* <div className="mb-3">
-              <label for="exampleFormControlInput1" className="form-label">Email address</label>
-              <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com"/>
-          </div> */}
-          <div className="mb-3">
-              <label for="exampleFormControlTextarea1" className="form-label">Text Area</label>
-              <textarea className="form-control" value={text} 
-              onChange={upperChange}
-              id="exampleFormControlTextarea1" rows="3">{props.heading} </textarea>
+    <div className="container">
+      <h1>{props.heading}</h1>
+        <div className="mb-3">
+          <textarea className="form-control border-black" value={text} onChange={upperChange}
+          id="exampleFormControlTextarea1" rows="6">{props.heading} 
+          </textarea>
+        </div>        
+          <button className="btn btn-primary mx-1" onClick={upperClick}>Convert to Uppercase
+          </button>
+          <button className="btn btn-primary mx-1" onClick={lowerClick}>Convert to Lowercase
+          </button>          
+      </div>
+      
+      <div className="container my-3">
+        <h2>Text Summary</h2>
+        <p>{text.trim().split(" ").length} words {text.length} characters</p>
+        <p>{0.008*text.trim().split(" ").length} minutes read</p>
+        <h2>Preview</h2>
+        <p>{text}</p>        
+    </div>
 
-          </div>
-          <div>
-            <button type="btn btn-primary" className="btn btn-primary"
-            onClick={upperClick}>Convert to uppercase</button>
-          </div>
-      </div>
-      <div className="container">
-        <h1>Results</h1>
-        <h1>34 words 797 characters</h1>
-      </div>
     </>
   )
 }
