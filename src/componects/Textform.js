@@ -18,6 +18,11 @@ function Textform(props) {
     console.log("upperClick")
   }
 
+  const clearText = () => {
+    setText("");
+    console.log("clearText")
+  }
+
   const copyText = (text) => {
     var text = document.getElementById("myBox");
     text.select();
@@ -44,6 +49,8 @@ function Textform(props) {
           <button className="btn btn-primary mx-1" onClick={upperClick}>Convert to Uppercase
           </button>
           <button className="btn btn-primary mx-1" onClick={lowerClick}>Convert to Lowercase
+          </button>
+          <button className="btn btn-primary mx-1" onClick={clearText}>Clear text
           </button> 
           <button className="btn btn-primary mx-1" onClick={copyText}>Copy to clipboard
           </button>             
