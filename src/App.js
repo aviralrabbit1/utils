@@ -23,12 +23,19 @@ function App() {
   const toggleMode = () => {
     if (mode === 'light') {
       showAlert("Dark mode enabled", "success");
+    //   setInterval(()=>{
+    //     document.title ='TextUtils - Dark Mode';
+    //   }, 2000)
     }
     else {
       showAlert("Light mode enabled", "success");
+    //   setInterval(()=>{
+    //     document.title ='TextUtils - Light Mode';
+    //   }, 1550)
     }
     setMode(mode === 'light'? 'dark' : 'light');
     document.body.style.backgroundColor = (mode === 'light')?'#44180beb':'white';
+    // document.title = (mode === 'light')?'TextUtils - Dark Mode':'TextUtils - Light Mode';
   };
 
   return (
