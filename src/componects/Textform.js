@@ -39,10 +39,11 @@ function Textform(props) {
 
   return (
     <>
-    <div className="container">
+    <div className="container" style={{color: props.mode === 'dark'?'white':'black'}}>
       <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea className="form-control border-black" value={text} onChange={upperChange}
+          <textarea className="form-control border-#44180beb" value={text} onChange={upperChange}
+          style={{backgroundColor: props.mode === 'dark'?'white':'#44180beb', color: props.mode === 'dark'?'#44180beb':'white'}}
           id="myBox" rows="6">{props.heading} 
           </textarea>
         </div>        
@@ -58,12 +59,12 @@ function Textform(props) {
           </button>          
       </div>
       
-      <div className="container my-3">
+      <div className="container my-3" style={{color: props.mode === 'dark'?'white':'#44180beb'}}>
         <h2>Text Summary</h2>
-        <p>{text.trim().split(" ").length} words {text.length} characters</p>
+        <p>{text.trim().split(/\b\w+\b/g).length-1} words {text.trim().split(/[ ]+/).join("").length} characters</p>
         <p>{0.008*text.trim().split(/[ ]+/).length} minutes read</p>
         <h2>Preview</h2>
-        <p>{text}</p>        
+        <p>{text.length>0?text:"Enter something to preview it"}</p>        
     </div>
 
     </>
