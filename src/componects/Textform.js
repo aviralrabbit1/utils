@@ -3,31 +3,35 @@ import React, {useState} from 'react'
 
 function Textform(props) {
 
-  const upperChange = (event) => {
+  const onChange = (event) => {
     setText(event.target.value);
     console.log("upperChange");
   }
-
+  
   const upperClick = () => {
     setText(text.toUpperCase());
     console.log("upperClick")
+    props.showAlert("Converted to uppercase!", "success");
   }  
   
   const lowerClick = () => {
     setText(text.toLowerCase());
     console.log("upperClick")
+    props.showAlert("Converted to lowercase!", "success");
   }
-
+  
   const clearText = () => {
     setText("");
     console.log("clearText")
+    props.showAlert("Cleared the text!", "success");
   }
-
+  
   const copyText = (text) => {
     var text = document.getElementById("myBox");
     text.select();
     text.setSelectionRange(0,9999);
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied the text!", "success");
   }
 
   const removeExtraSpaces = () => {
@@ -42,7 +46,7 @@ function Textform(props) {
     <div className="container" style={{color: props.mode === 'dark'?'white':'black'}}>
       <h1>{props.heading}</h1>
         <div className="mb-3">
-          <textarea className="form-control border-#44180beb" value={text} onChange={upperChange}
+          <textarea className="form-control border-#44180beb" value={text} onChange={onChange}
           style={{backgroundColor: props.mode === 'dark'?'white':'#44180beb', color: props.mode === 'dark'?'#44180beb':'white'}}
           id="myBox" rows="6">{props.heading} 
           </textarea>
