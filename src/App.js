@@ -29,6 +29,7 @@ function App() {
     }
     setMode(mode === 'light'? 'dark' : 'light');
     document.body.style.backgroundColor = (mode === 'light')?'#44180beb':'white';
+    document.title = (mode === 'light')?'TextUtils - Dark Mode':'TextUtils - Light Mode';
   };
 
   return (
