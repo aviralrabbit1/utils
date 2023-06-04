@@ -26,9 +26,9 @@ function App() {
     //   setInterval(()=>{
     //     document.title ='TextUtils - Dark Mode';
     //   }, 2000)
-    // }
-    // else {
-    //   showAlert("Light mode enabled", "success");
+    }
+    else {
+      showAlert("Light mode enabled", "success");
     //   setInterval(()=>{
     //     document.title ='TextUtils - Light Mode';
     //   }, 1550)
