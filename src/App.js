@@ -20,8 +20,6 @@ function App() {
     }, 2000);
   }
 
-
-
   const toggleMode = () => {
     if (mode === 'light') {
       showAlert("Dark mode enabled", "success");
