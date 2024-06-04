@@ -26,11 +26,11 @@ function Textform(props) {
     props.showAlert("Cleared the text!", "success");
   }
   
-  const copyText = (text) => {
-    var text = document.getElementById("myBox");
-    text.select();
-    text.setSelectionRange(0,9999);
-    navigator.clipboard.writeText(text.value);
+  const copyText = () => {
+    var curr_text = document.getElementById("myBox");
+    curr_text.select();
+    curr_text.setSelectionRange(0,9999);
+    navigator.clipboard.writeText(curr_text.value);
     props.showAlert("Copied the text!", "success");
   }
 
